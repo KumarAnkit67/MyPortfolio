@@ -49,9 +49,10 @@
         '@': path.resolve(__dirname, './src'),
       },
     },
+    base: '/MyPortfolio/',
     build: {
       target: 'esnext',
-      outDir: 'build',
+      outDir: 'dist',
     },
     server: {
       port: 3000,

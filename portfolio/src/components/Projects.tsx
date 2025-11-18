@@ -6,34 +6,36 @@ import { Badge } from './ui/badge';
 
 const projects = [
   {
-    title: 'Full-Stack MERN Application',
-    description: 'A comprehensive e-commerce platform with real-time features, payment integration, and admin dashboard.',
-    tech: ['React', 'Node.js', 'MongoDB', 'Express', 'Socket.io'],
+    title: 'Smart Health Tracker',
+    description: 'Mobile solution for real-time health monitoring supporting 500+ active users with 99.9% uptime and push notifications for critical health readings.',
+    tech: ['React Native', 'Firebase', 'Node.js', 'Push Notifications'],
     gradient: 'from-cyan-500 to-blue-600',
+    year: '2025',
+    icon: '🏥'
   },
   {
-    title: 'React Native Mobile App',
-    description: 'Cross-platform mobile application for task management with offline support and push notifications.',
-    tech: ['React Native', 'Firebase', 'Redux', 'AsyncStorage'],
+    title: 'EduConnect Platform',
+    description: 'Web platform connecting tutors and students with secure authentication and subscription payments, supporting 10,000+ monthly active users.',
+    tech: ['React.js', 'Next.js', 'Firebase', 'Node.js'],
     gradient: 'from-purple-500 to-pink-600',
+    year: '2024',
+    icon: '📚'
   },
   {
-    title: 'Modern Portfolio Website',
-    description: 'Interactive portfolio with 3D animations, smooth transitions, and custom cursor effects.',
-    tech: ['Next.js', 'Three.js', 'Motion', 'Tailwind'],
+    title: 'GreenCart E-Commerce',
+    description: 'Full-stack e-commerce platform for eco-friendly products with recommendation algorithms, contributing to 25% increase in sustainable purchases.',
+    tech: ['React.js', 'Node.js', 'MongoDB', 'Express'],
     gradient: 'from-green-500 to-teal-600',
+    year: '2024',
+    icon: '🌱'
   },
   {
-    title: 'Next.js + PostgreSQL Dashboard',
-    description: 'Analytics dashboard with real-time data visualization, charts, and comprehensive reporting.',
-    tech: ['Next.js', 'PostgreSQL', 'Prisma', 'Recharts'],
+    title: 'HabitLoop Tracker',
+    description: 'Habit tracking app where users can create custom habits and maintain streaks with progress visualization and motivation features.',
+    tech: ['React Native', 'Firebase', 'Node.js', 'Analytics'],
     gradient: 'from-orange-500 to-red-600',
-  },
-  {
-    title: 'Python Automation & API',
-    description: 'Automated workflow system with REST API, data processing, and scheduled tasks.',
-    tech: ['Python', 'FastAPI', 'Celery', 'Redis'],
-    gradient: 'from-indigo-500 to-purple-600',
+    year: '2024',
+    icon: '🔄'
   },
 ];
 
@@ -101,7 +103,10 @@ export function Projects() {
                       ease: 'linear',
                     }}
                   />
-                  <span className="relative z-10 text-gray-500">Project Preview</span>
+                  <div className="relative z-10 text-center">
+                    <div className="text-6xl mb-2">{project.icon}</div>
+                    <span className="text-gray-400 text-sm">{project.year}</span>
+                  </div>
                 </motion.div>
 
                 <h3 className="text-white mb-3 group-hover:text-cyan-400 transition-colors">

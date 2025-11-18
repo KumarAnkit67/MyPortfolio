@@ -1,16 +1,16 @@
 import { motion, useInView, useScroll, useTransform } from 'motion/react';
 import { useRef, useState } from 'react';
-import { Mail, Github, Linkedin, Twitter, Send } from 'lucide-react';
+import { Mail, Github, Linkedin, MapPin, Send } from 'lucide-react';
 import { Button } from './ui/button';
 import { Input } from './ui/input';
 import { Textarea } from './ui/textarea';
 import { toast } from 'sonner@2.0.3';
+import { EmailService } from '../utils/emailService';
 
 const socialLinks = [
-  { icon: Github, href: '#', label: 'GitHub', color: 'hover:text-white' },
-  { icon: Linkedin, href: '#', label: 'LinkedIn', color: 'hover:text-blue-400' },
-  { icon: Twitter, href: '#', label: 'Twitter', color: 'hover:text-cyan-400' },
-  { icon: Mail, href: 'mailto:ankitkumar@example.com', label: 'Email', color: 'hover:text-purple-400' },
+  { icon: Github, href: 'https://github.com/Percy1011', label: 'GitHub', color: 'hover:text-white' },
+  { icon: Linkedin, href: 'https://linkedin.com/in/ankit-kumar-45b102252', label: 'LinkedIn', color: 'hover:text-blue-400' },
+  { icon: Mail, href: 'mailto:ankitanand843410@gmail.com', label: 'Email', color: 'hover:text-purple-400' },
 ];
 
 export function Contact() {
@@ -25,10 +25,24 @@ export function Contact() {
   const x1 = useTransform(scrollYProgress, [0, 1], [-100, 100]);
   const x2 = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success('Message sent successfully! I\'ll get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
+    
+    try {
+      const success = await EmailService.sendContactEmail(formData);
+      
+      if (success) {
+        toast.success('Message sent successfully! I\'ll get back to you within 24 hours.');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        // Fallback to mailto
+        const mailtoLink = EmailService.createMailtoLink(formData);
+        window.open(mailtoLink, '_blank');
+        toast.info('Opening your email client. Please send the message from there.');
+      }
+    } catch (error) {
+      toast.error('Failed to send message. Please try emailing me directly at ankitanand843410@gmail.com');
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -63,7 +77,7 @@ export function Contact() {
             Get In Touch
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Have a project in mind? Let's work together to create something amazing.
+            Ready to bring your next project to life? Let's discuss how I can help you build high-performance web and mobile applications.
           </p>
         </motion.div>
 
@@ -150,9 +164,13 @@ export function Contact() {
               <div className="space-y-4 mb-8">
                 <div className="flex items-center gap-4 text-gray-400">
                   <Mail className="w-5 h-5 text-cyan-400" />
-                  <a href="mailto:ankitkumar@example.com" className="hover:text-cyan-400 transition-colors">
-                    ankitkumar@example.com
+                  <a href="mailto:ankitanand843410@gmail.com" className="hover:text-cyan-400 transition-colors">
+                    ankitanand843410@gmail.com
                   </a>
+                </div>
+                <div className="flex items-center gap-4 text-gray-400">
+                  <MapPin className="w-5 h-5 text-cyan-400" />
+                  <span>Noida, Uttar Pradesh</span>
                 </div>
               </div>
 
@@ -182,7 +200,8 @@ export function Contact() {
               <h4 className="text-white mb-3">Let's Create Together</h4>
               <p className="text-gray-400">
                 I'm always interested in hearing about new projects and opportunities. 
-                Whether you have a question or just want to say hi, I'll try my best to get back to you!
+                Whether you need a full-stack developer, React Native expert, or have questions about my work, 
+                I typically respond within 24 hours!
               </p>
             </motion.div>
           </motion.div>

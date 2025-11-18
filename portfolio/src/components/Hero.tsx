@@ -78,7 +78,7 @@ export function Hero() {
           variants={itemVariants}
           className="text-cyan-300/80 max-w-2xl mx-auto mb-12"
         >
-          Building seamless digital experiences with full-stack power.
+          Full Stack Developer with 2+ years of experience creating high-performance web and mobile applications.
         </motion.p>
 
         <motion.div

@@ -4,28 +4,31 @@ import { Briefcase, Code, Rocket } from 'lucide-react';
 
 const experiences = [
   {
-    year: '2023 - Present',
-    title: 'Senior Full-Stack Developer',
-    company: 'Freelance',
-    description: 'Building custom web and mobile applications for clients worldwide. Specializing in MERN stack and React Native.',
+    year: 'Oct 2023 - Present',
+    title: 'Full Stack Developer',
+    company: 'Wingman Partners Solution LLP',
+    description: 'Designed and implemented reusable UI components using React.js, Next.js, React Native, cutting load time by 30%. Built backend services in Node.js, improving API response times by 25%. Automated deployment pipelines using Firebase and Vercel, increasing release efficiency by 40%.',
     icon: Rocket,
     color: 'cyan',
+    achievements: ['30% faster load times', '25% improved API response', '40% release efficiency']
   },
   {
-    year: '2022 - 2023',
-    title: 'Full-Stack Developer',
-    company: 'Tech Solutions Inc.',
-    description: 'Developed scalable web applications using React, Next.js, and Node.js. Implemented CI/CD pipelines and cloud infrastructure.',
+    year: 'Jul 2023 - Oct 2023',
+    title: 'Front End Developer Intern',
+    company: 'Vibgyorweb Technologies Pvt Ltd.',
+    description: 'Implemented responsive UI components in React.js, boosting accessibility compliance by 40%. Integrated third-party APIs and applied Context API for global state, improving data integrity by 20%. Refined backend API endpoints, decreasing average response time by 15%.',
     icon: Code,
     color: 'purple',
+    achievements: ['40% accessibility improvement', '20% better data integrity', '15% faster response times']
   },
   {
-    year: '2021 - 2022',
-    title: 'Software Development Intern',
-    company: 'Innovation Labs',
-    description: 'Worked on frontend development with React and Angular. Contributed to mobile app development with React Native.',
+    year: 'Sep 2020 - May 2024',
+    title: 'Bachelor of Science in Computer Science',
+    company: 'Galgotias University',
+    description: 'Completed degree with CGPA: 8.56. Focused on full-stack development, data structures, algorithms, and software engineering principles. Built multiple projects including web applications and mobile apps.',
     icon: Briefcase,
     color: 'blue',
+    achievements: ['CGPA: 8.56', 'Multiple project builds', 'Strong CS fundamentals']
   },
 ];
 
@@ -64,7 +67,7 @@ export function Experience() {
             Experience
           </h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            2 years of experience building web & mobile applications
+            2+ years of experience creating high-performance web and mobile applications
           </p>
         </motion.div>
 
@@ -107,7 +110,16 @@ export function Experience() {
                   
                   <h3 className="text-white mb-2">{exp.title}</h3>
                   <h4 className="text-cyan-400 mb-4">{exp.company}</h4>
-                  <p className="text-gray-400">{exp.description}</p>
+                  <p className="text-gray-400 mb-4">{exp.description}</p>
+                  {exp.achievements && (
+                    <div className="flex flex-wrap gap-2">
+                      {exp.achievements.map((achievement, i) => (
+                        <span key={i} className={`text-xs px-2 py-1 rounded-full bg-${exp.color}-500/20 text-${exp.color}-300 border border-${exp.color}-500/30`}>
+                          {achievement}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </motion.div>
               </div>
             </motion.div>

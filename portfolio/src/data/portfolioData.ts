@@ -2,11 +2,11 @@ export const portfolioData = {
   personal: {
     name: "Ankit Kumar",
     title: "Full-Stack Developer & React Native Engineer",
-    description: "Building seamless digital experiences with full-stack power.",
-    location: "India",
-    email: "contact@ankitkumar.dev",
-    linkedin: "https://linkedin.com/in/ankitkumar",
-    github: "https://github.com/ankitkumar"
+    description: "Full Stack Developer with 2+ years of experience creating high-performance web and mobile applications.",
+    location: "Noida, Uttar Pradesh",
+    email: "ankitanand843410@gmail.com",
+    linkedin: "https://linkedin.com/in/ankit-kumar-45b102252",
+    github: "https://github.com/Percy1011"
   },
   
   skills: [
@@ -22,23 +22,39 @@ export const portfolioData = {
   
   experience: [
     {
-      company: "Tech Company",
-      role: "Full-Stack Developer",
-      duration: "2022 - Present",
-      description: "Developing scalable web applications using React, Node.js, and cloud technologies"
+      company: "Wingman Partners Solution LLP",
+      role: "Full Stack Developer",
+      duration: "Oct 2023 - Present",
+      description: "Designed reusable UI components, built backend services, and automated deployment pipelines. Improved load times by 30% and API response times by 25%."
+    },
+    {
+      company: "Vibgyorweb Technologies Pvt Ltd.",
+      role: "Front End Developer Intern",
+      duration: "Jul 2023 - Oct 2023",
+      description: "Implemented responsive UI components, integrated APIs, and improved accessibility compliance by 40%."
     }
   ],
   
   projects: [
     {
-      name: "E-commerce Platform",
-      tech: "React, Node.js, MongoDB",
-      description: "Full-stack e-commerce solution with payment integration"
+      name: "Smart Health Tracker",
+      tech: "React Native, Firebase, Node.js",
+      description: "Mobile solution for real-time health monitoring supporting 500+ active users with 99.9% uptime and push notifications."
     },
     {
-      name: "Task Management App", 
-      tech: "React Native, Firebase",
-      description: "Cross-platform mobile app for task and project management"
+      name: "EduConnect Platform", 
+      tech: "React.js, Next.js, Firebase, Node.js",
+      description: "Web platform connecting tutors and students with secure authentication, supporting 10,000+ monthly active users."
+    },
+    {
+      name: "GreenCart E-Commerce",
+      tech: "React.js, Node.js, MongoDB, Express",
+      description: "Full-stack e-commerce platform for eco-friendly products with recommendation algorithms and optimized payment systems."
+    },
+    {
+      name: "HabitLoop Tracker",
+      tech: "React Native, Firebase, Node.js",
+      description: "Habit tracking app where users can create custom habits and maintain streaks with progress visualization and motivation features."
     }
   ],
   

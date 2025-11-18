@@ -18,13 +18,13 @@ export class ChatbotAI {
     ],
     
     experience: [
-      `Ankit is currently working as a ${portfolioData.experience[0].role} at ${portfolioData.experience[0].company}.`,
-      "He has experience developing scalable web applications using modern technologies."
+      `Ankit is currently working as a ${portfolioData.experience[0].role} at ${portfolioData.experience[0].company} since ${portfolioData.experience[0].duration}.`,
+      "He has 2+ years of experience developing scalable web applications, improving load times by 30% and API response times by 25%."
     ],
     
     projects: [
-      "Ankit has worked on various projects including e-commerce platforms and mobile apps.",
-      `Recent projects include: ${portfolioData.projects.map(p => p.name).join(', ')}.`
+      "Ankit has built projects like Smart Health Tracker (500+ users), EduConnect Platform (10,000+ monthly users), and HabitLoop for habit tracking.",
+      `His portfolio includes: ${portfolioData.projects.map(p => p.name).join(', ')} - each showcasing full-stack and mobile development skills.`
     ],
     
     contact: [

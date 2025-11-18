@@ -5,18 +5,18 @@ import { Code, Rocket, Zap } from 'lucide-react';
 const features = [
   {
     icon: Code,
-    title: 'Frontend Expert',
-    description: 'Building modern, responsive UIs with React, Next.js, and Angular',
+    title: 'Frontend Excellence',
+    description: 'Reusable UI components with React.js & Next.js, cutting load times by 30%',
   },
   {
     icon: Rocket,
-    title: 'Backend Mastery',
-    description: 'Scalable APIs with Node.js, MongoDB, and PostgreSQL',
+    title: 'Backend Performance',
+    description: 'Node.js APIs with authentication & payments, 25% faster response times',
   },
   {
     icon: Zap,
-    title: 'Mobile Development',
-    description: 'Cross-platform mobile apps with React Native',
+    title: 'Mobile Innovation',
+    description: 'React Native apps with real-time sync, supporting 500+ active users',
   },
 ];
 
@@ -49,10 +49,10 @@ export function About() {
             About Me
           </h2>
           <p className="text-gray-400 max-w-3xl mx-auto">
-            I am a passionate <span className="text-cyan-400">Full-Stack Developer</span> with expertise in building 
-            scalable backend APIs, modern frontend applications, and complete solutions. I specialize in React.js, 
-            Next.js, Node.js, MongoDB, PostgreSQL, Angular, and Python. I'm also experienced in React Native mobile 
-            app development, delivering seamless digital experiences across platforms.
+            I am a passionate <span className="text-cyan-400">Full-Stack Developer</span> with <span className="text-purple-400">2+ years of experience</span> creating 
+            high-performance web and mobile applications. I specialize in React.js, Next.js, React Native, and Node.js, 
+            with expertise in building scalable solutions that serve <span className="text-cyan-400">10,000+ users</span>. 
+            Currently working at Wingman Partners Solution LLP, I've improved load times by 30% and API response times by 25%.
           </p>
         </motion.div>
 
