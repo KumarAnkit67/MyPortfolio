@@ -13,13 +13,9 @@ permissions:
   id-token: write
 
 jobs:
-  deploy:
+  build:
     if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.pull_request.merged == true)
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
     
     steps:
     - name: Checkout
@@ -42,9 +38,14 @@ jobs:
         cd portfolio
         npm run build
         
-    - name: Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
+    - name: Setup Pages
+      uses: actions/configure-pages@v4
+      
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./portfolio/dist
-        # cname: your-domain.com  # Optional: uncomment and replace with your custom domain
+        path: ./portfolio/dist
+        
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
